@@ -40,6 +40,9 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
+player = Player('Player1', room['outside'])
+print(f'{player.current_room}')
+
 # Write a loop that:
 #
 # * Prints the current room name
@@ -50,3 +53,16 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+while True:
+    move = input("\nWhich way would you like to move? Enter 'n', 's' 'e' or 'w'?").split()
+    if move[0] in ('n', 's', 'e', 'w'):
+        if hasattr(player.current_room, f'{move[0]}_to'):
+            player.set_room(getattr(player.current_room, f'{move[0]}_to'))
+            print(f'You are now in {player.current_room.name}\n')
+            print(f'{player.current_room.description}')
+            #add items here
+        
+        if move[0] == 'q':
+            exit()
+
