@@ -19,5 +19,3 @@ class Player:
     
     def drop_item(self, item):
         self.inventory.remove(item)
-# player = Player("Christine", "room", "weapon")
-# print(Player.__str__(player))

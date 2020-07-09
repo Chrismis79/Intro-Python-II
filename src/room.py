@@ -13,6 +13,6 @@ class Room:
 
 
     def __str__(self):
-        return f'{self.name} - Description: {self.description} carrying {self.items}'
+        return f'{self.name} - Description: {self.description}. You see the following items: {self.items}'
 
     
